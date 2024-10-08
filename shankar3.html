@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set Time Interval</title>
+</head>
+<style>
+
+body{
+    background-color: black;
+}
+    .youtube-loader {
+      display: flex;
+        margin-left: 500px;
+      height: 50px;
+    }
+    .dot {
+      
+      width: 90px;
+      height: 90px;
+      margin: 250px 40px ;
+      background-color: aquamarine;
+      border-radius: 50%;
+      animation: blink 1.7s infinite both;
+    }
+  
+    .dot:nth-child(2) {
+      animation-delay: 0.4s;
+      background-color: blue;
+    }
+  
+    .dot:nth-child(3) {
+      animation-delay: 0.6s;
+      background-color: red;
+    }
+  
+    @keyframes blink {
+      0%, 80%, 100% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+    }
+    button{
+        margin-top: 200px;
+        margin-left: 150px;
+        -webkit-box-reflect: below 1px linear-gradient(transparent,#0005);
+        box-shadow: 0 0 15px skyblue,0 0 255px skyblue,0 0 55px skyblue,0 0 130px skyblue;
+        background-color: skyblue;
+        border-radius: 7px;
+        height: 100px;
+        width: 190px;
+    }
+    p{
+        font-size: 50px;
+        margin-left: 550px;
+        text-align: start;
+        color: aliceblue ;
+        font-family: 'Indie Flower', cursive;;
+    }
+    h3{
+        font-size: 30px;
+    }
+
+  </style>
+<body> 
+  
+    <div class="youtube-loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+<p id="changingText">HYE BHAVYA JI</p>
+<p id="url"></p>
+
+
+<script>
+
+    setTimeout(() => {
+        document.getElementById('url').innerHTML = '<a href="http://127.0.0.1:5500/shankar2.html"><button><h3>MEMORIES</h3></button></a>';
+      }, 6500);
+
+  const textElement = document.getElementById('changingText');
+  const messages = ['LOADING THE MEMORIES','PLEASE WAIT','CLICK MEMORIS BUTTON '];
+  let index = 0;
+
+  setInterval(() => {
+    textElement.textContent = messages[index];
+    index = (index + 1) % messages.length;
+  }, 2000); 
+
+</script>
+</body>
+</html>
+
